@@ -13,20 +13,20 @@ namespace DannyBoyNg.Services
         /// </summary>
         public RandomNumberGenerator Rng { get; set; } = RandomNumberGenerator.Create();
         /// <summary>
-        /// Gets or sets the pseudo-random function to be used in the key derivation process.
+        /// Gets or sets the pseudo-random function to be used in the key derivation process. Default: KeyDerivationPrf.HMACSHA256
         /// </summary>
         public KeyDerivationPrf Prf { get; set; } = KeyDerivationPrf.HMACSHA256;
         /// <summary>
-        /// Gets or sets the number of iterations of the pseudo-random function to apply during the key derivation process.
+        /// Gets or sets the number of iterations of the pseudo-random function to apply during the key derivation process. Default: 10000
         /// </summary>
-        public int IterCount { get; set; } = 10000;
+        public int Pbkdf2IterCount { get; set; } = 10000;
         /// <summary>
-        /// Gets or sets the size of the salt in bytes.
+        /// Gets or sets the size of the salt in bytes. Default: 16
         /// </summary>
-        public int SaltSize { get; set; } = 128 / 8;
+        public int Pbkdf2SaltSize { get; set; } = 16;
         /// <summary>
-        /// Gets or sets the desired length (in bytes) of the derived key.
+        /// Gets or sets the desired length (in bytes) of the derived key. Default: 32
         /// </summary>
-        public int NumBytesRequested { get; set; } = 256 / 8;
+        public int Pbkdf2NumBytesRequested { get; set; } = 32;
     }
 }

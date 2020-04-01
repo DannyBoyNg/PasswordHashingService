@@ -48,7 +48,7 @@ namespace DannyBoyNg.Services
             {
                 throw new ArgumentNullException(nameof(password));
             }
-            return Convert.ToBase64String(HashPasswordInternal(password, Settings.Rng, Settings.Prf, Settings.IterCount, Settings.SaltSize, Settings.NumBytesRequested));
+            return Convert.ToBase64String(HashPasswordInternal(password, Settings.Rng, Settings.Prf, Settings.Pbkdf2IterCount, Settings.Pbkdf2SaltSize, Settings.Pbkdf2NumBytesRequested));
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace DannyBoyNg.Services
             }
             if (VerifyHashedPasswordInternal(decodedHashedPassword, providedPassword, out int embeddedIterCount))
             {
-                if (embeddedIterCount < Settings.IterCount)
+                if (embeddedIterCount < Settings.Pbkdf2IterCount)
                 {
                     return PasswordVerificationResult.SuccessRehashNeeded;
                 }
