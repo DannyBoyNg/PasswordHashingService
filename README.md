@@ -23,7 +23,10 @@ using Ng.Services;
 ...
 var settings = new PasswordHashingSettings()
 {
-    IterationCount = 20000, //10000 is default
+    Prf = KeyDerivationPrf.HMACSHA256, //default: KeyDerivationPrf.HMACSHA256
+    Pbkdf2IterCount = 20000, //10000 is default
+    Pbkdf2SaltSize = 16, //default: 16 (bytes)
+    Pbkdf2NumBytesRequested = 32, //default: 32 (bytes)
 };
 var passwordHashingService = new PasswordHashingService(settings);
 var hash = passwordHashingService.HashPassword("mySuperSecretPass");
