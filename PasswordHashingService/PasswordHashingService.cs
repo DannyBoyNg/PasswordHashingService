@@ -4,12 +4,12 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 
-namespace DannyBoyNg.Services
+namespace Ng.Services
 {
     /// <summary>
     /// The Password hashing service
     /// </summary>
-    /// <seealso cref="DannyBoyNg.Services.IPasswordHashingService" />
+    /// <seealso cref="Ng.Services.IPasswordHashingService" />
     public class PasswordHashingService : IPasswordHashingService
     {
         /// <summary>

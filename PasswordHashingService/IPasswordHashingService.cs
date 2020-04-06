@@ -1,5 +1,5 @@
 ﻿
-namespace DannyBoyNg.Services
+namespace Ng.Services
 {
     /// <summary>
     /// Default interface for PasswordHashingService

@@ -11,7 +11,7 @@ Microsoft.Extensions.Options
 
 Install from Nuget
 ```
-Install-Package DannyBoyNg.PasswordHashingService
+Install-Package Ng.PasswordHashingService
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ Install-Package DannyBoyNg.PasswordHashingService
 Console application
 
 ```csharp
-using DannyBoyNg.Services;
+using Ng.Services;
 ...
 var settings = new PasswordHashingSettings()
 {
@@ -49,7 +49,7 @@ ASP.NET Core
 
 Register service with dependency injection in Startup.cs
 ```csharp
-using DannyBoyNg.Services;
+using Ng.Services;
 ...
 public void ConfigureServices(IServiceCollection services)
 {
