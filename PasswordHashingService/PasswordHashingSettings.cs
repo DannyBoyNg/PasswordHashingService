@@ -6,7 +6,7 @@ namespace Ng.Services
     /// <summary>
     /// The container for the password hashing settings
     /// </summary>
-    public class PasswordHashingSettings
+    public record PasswordHashingSettings
     {
         /// <summary>
         /// Gets or sets the random number generator.

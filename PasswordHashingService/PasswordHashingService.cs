@@ -92,7 +92,7 @@ namespace Ng.Services
         }
 
         //Private internals
-        private byte[] HashPasswordInternal(string password, RandomNumberGenerator rng, KeyDerivationPrf prf, int iterCount, int saltSize, int numBytesRequested)
+        private static byte[] HashPasswordInternal(string password, RandomNumberGenerator rng, KeyDerivationPrf prf, int iterCount, int saltSize, int numBytesRequested)
         {
             byte[] salt = new byte[saltSize];
             rng.GetBytes(salt);
@@ -108,8 +108,7 @@ namespace Ng.Services
             return outputBytes;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Exceptions not of interest")]
-        private bool VerifyHashedPasswordInternal(byte[] hashedPassword, string password, out int iterCount)
+        private static bool VerifyHashedPasswordInternal(byte[] hashedPassword, string password, out int iterCount)
         {
             iterCount = default;
 
